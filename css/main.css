@@ -26,7 +26,8 @@ a {
 #main .button {
   display: inline-block;
   background-color: #BA2C3D;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  cursor: pointer; }
   #main .button p {
     margin: 1rem;
     text-transform: uppercase;
