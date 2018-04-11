@@ -1,16 +1,24 @@
+
+@import "./mixins.scss";
 //Colors
 $red: #BA2C3D;
 $yellow: #FFE017;
 
 html {
   font-size: 16px;
+  width: 100%;
+  height: 100vh;
+
 }
 
 body {
   font-family: 'Open sans', sans-serif;
   text-align: center;
+  width: 100%;
   margin: 0;
   color: black;
+  height: inherit;
+  overflow-x: hidden;
 }
 
 a {
@@ -23,19 +31,22 @@ a {
   color: white;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     padding: 50px 0 10px;
     margin: inherit;
     font-weight: lighter;
   }
 
   h2 {
+    font-size: 1rem;
     font-weight: inherit;
     padding-bottom: 50px;
   }
 }
 
 #main {
+  width: 90%;
+  margin-left: 5%;
   .button {
     display: inline-block;
     background-color: $red;
@@ -50,18 +61,29 @@ a {
   }
 
   #quote {
-    margin: 20px auto;
-    width: 600px;
     color: black;
     border-bottom: 2px solid #b2b2b2;
     padding-bottom: 30px;
-    font-size: 20px;
+    @include min-width(768px) {
+      width: 70%;
+      margin-left: 15%;
+    }
+    @include min-width(1200px) {
+      width: 50%;
+      margin-left: 25%;
+    }
   }
 }
 
 #footer {
-  position: fixed;
-  bottom: 0;
+  font-size: 0.6rem;
+  margin-top: 10%;
   width: 100%;
+  bottom: 0;
   text-align: center;
+  @include minw-maxh(500px, 800px){
+    position: fixed;
+    bottom: 0;
+  }
+
 }
